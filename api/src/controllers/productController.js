@@ -29,3 +29,53 @@ exports.getAllProducts = async (req, res) => {
     });
   }
 };
+
+exports.getProductById = async (req, res) => {
+  try {
+    const product = await Product.findOne({ _id: req.params.id });
+
+    res.status(200).json({
+      status: 'success',
+      product,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      error,
+    });
+  }
+};
+
+exports.updateProduct = async (req, res) => {
+  try {
+    const product = await Product.findOne({ _id: req.params.id });
+    product.name = req.body.name;
+    product.stock = req.body.stock;
+    product.save();
+
+    res.status(200).json({
+      status: 'success',
+      product,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      error,
+    });
+  }
+};
+
+exports.deleteProduct = async (req, res) => {
+  const product = await Product.findOneAndRemove({ _id: req.params.id });
+
+  try {
+    res.status(200).json({
+      status: 'success',
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: 'fail',
+      error,
+    });
+  }
+};
