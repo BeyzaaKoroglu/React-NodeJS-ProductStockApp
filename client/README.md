@@ -1,0 +1,3 @@
+### TECHNOLOGIES
+
+- Styled Components
