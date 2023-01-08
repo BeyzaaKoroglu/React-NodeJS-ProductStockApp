@@ -1,8 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const productRoute = require('./routes/productRoute');
 
 const app = express();
+app.use(cors());
 
 mongoose
   .connect('mongodb://localhost/productstock-db', {

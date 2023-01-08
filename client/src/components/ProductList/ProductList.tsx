@@ -1,6 +1,10 @@
+import { useAppSelector } from '../../redux/store';
+import Product from '../Product';
 import { Styled } from './ProductList.styled';
 
 const ProductList = () => {
+  const allProducts = useAppSelector((state) => state.products.allProducts);
+
   return (
     <Styled>
       <ul>
@@ -10,36 +14,9 @@ const ProductList = () => {
           <b></b>
           <b></b>
         </li>
-        <li>
-          <span>Dress</span>
-          <span>2</span>
-          <span>
-            <button className="editBtn">Edit</button>
-          </span>
-          <span>
-            <button className="deleteBtn">Delete</button>
-          </span>
-        </li>
-        <li>
-          <span>Shoes</span>
-          <span>5</span>
-          <span>
-            <button className="editBtn">Edit</button>
-          </span>
-          <span>
-            <button className="deleteBtn">Delete</button>
-          </span>
-        </li>
-        <li>
-          <span>Shirt</span>
-          <span>8</span>
-          <span>
-            <button className="editBtn">Edit</button>
-          </span>
-          <span>
-            <button className="deleteBtn">Delete</button>
-          </span>
-        </li>
+        {allProducts.map((product, index) => (
+          <Product key={index} product={product} />
+        ))}
       </ul>
     </Styled>
   );

@@ -1,4 +1,5 @@
 ### Dependencies
+- Cors
 - Express
 - Mongoose
 
