@@ -1,5 +1,6 @@
 export type ProductsStateType = {
   allProducts: Array<ProductType>;
+  searchKey: String;
 };
 
 export type ProductType = {

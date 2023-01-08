@@ -1,15 +1,20 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { getAllProducts } from './services';
+import { deleteProduct, getAllProducts } from './services';
 import { ProductsStateType, ProductType } from './types';
 
 const initialState: ProductsStateType = {
   allProducts: [],
+  searchKey: '',
 };
 
 export const productsSlice = createSlice({
   name: 'products',
   initialState,
-  reducers: {},
+  reducers: {
+    handleSearchKey(state, action: PayloadAction<string>) {
+      state.searchKey = action.payload;
+    },
+  },
   extraReducers(builder) {
     builder.addCase(
       getAllProducts.fulfilled,
@@ -20,4 +25,5 @@ export const productsSlice = createSlice({
   },
 });
 
+export const { handleSearchKey } = productsSlice.actions;
 export default productsSlice.reducer;
