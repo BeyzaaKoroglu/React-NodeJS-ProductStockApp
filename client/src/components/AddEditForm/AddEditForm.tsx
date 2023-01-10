@@ -8,6 +8,7 @@ import {
 import { useAppDispatch, useAppSelector } from '../../redux/store';
 
 const AddEditForm = () => {
+  const allProducts = useAppSelector((state) => state.products.allProducts);
   const modalType = useAppSelector((state) => state.modal.modalType);
   const editProduct = useAppSelector((state) => state.modal.editProduct);
   const dispatch = useAppDispatch();
@@ -27,16 +28,35 @@ const AddEditForm = () => {
   };
 
   const handleAddClick = () => {
-    dispatch(createProduct(formValues)).then(() => dispatch(getAllProducts()));
-    dispatch(handleShowModal());
+    if (formValues.name === '') alert('Product name is required');
+    else {
+      if (allProducts.find((product) => product.name === formValues.name))
+        alert('The product already exists');
+      else {
+        dispatch(createProduct(formValues)).then(() =>
+          dispatch(getAllProducts())
+        );
+        dispatch(handleShowModal());
+      }
+    }
   };
 
   const handleEditClick = () => {
-    editProduct &&
-      dispatch(updateProduct({ ...formValues, _id: editProduct._id })).then(
-        () => dispatch(getAllProducts())
-      );
-    dispatch(handleShowModal());
+    if (formValues.name === '') alert('Product name is required');
+    else {
+      if (
+        allProducts.find((product) => product.name === formValues.name) &&
+        formValues.name !== editProduct?.name
+      )
+        alert('The product already exists');
+      else {
+        editProduct &&
+          dispatch(updateProduct({ ...formValues, _id: editProduct._id })).then(
+            () => dispatch(getAllProducts())
+          );
+        dispatch(handleShowModal());
+      }
+    }
   };
 
   const handleCancelClick = () => {
