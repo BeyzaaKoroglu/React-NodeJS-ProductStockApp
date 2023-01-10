@@ -28,4 +28,13 @@ export const Styled = styled.div`
       }
     }
   }
+  @media (max-width: 540px) {
+    ul {
+      li {
+        b {
+          padding: 0px;
+        }
+      }
+    }
+  }
 `;

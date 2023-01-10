@@ -1,1 +1,1 @@
-"# React-NodeJS-ProductStockApp" 
+# Product Stock App
