@@ -10,7 +10,7 @@ export const Styled = styled.header`
     margin: 10px 20px;
     font-size: 24px;
   }
-  
+
   button {
     margin: 10px 20px;
     border: 2px solid rgb(0, 175, 0);
@@ -20,5 +20,15 @@ export const Styled = styled.header`
     font-size: 14px;
     padding: 5px 15px;
     border-radius: 20px;
+  }
+
+  @media (max-width: 540px) {
+    p {
+      font-size: 18px;
+    }
+    button {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
   }
 `;

@@ -44,4 +44,17 @@ export const Styled = styled.div`
       }
     }
   }
+
+  @media (max-width: 540px) {
+    div {
+      width: 90%;
+      input {
+        margin: 10px;
+      }
+      button {
+        width: 35%;
+        font-size: 16px;
+      }
+    }
+  }
 `;

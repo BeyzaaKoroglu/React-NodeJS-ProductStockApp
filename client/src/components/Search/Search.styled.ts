@@ -8,4 +8,8 @@ export const Styled = styled.input`
   padding-left: 15px;
   padding-right: 15px;
   margin: 10px 20px;
+
+  @media (max-width: 540px) {
+    width: 50%;
+  }
 `;
