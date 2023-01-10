@@ -18,7 +18,7 @@ export const Styled = styled.header`
     color: white;
     font-weight: bold;
     font-size: 14px;
-    padding: 5px 15px;
+    padding: 5px 20px;
     border-radius: 20px;
   }
 

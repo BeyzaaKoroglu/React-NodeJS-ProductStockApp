@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Styled = styled.div`
+  margin-top: 50px;
   ul {
     list-style-type: none;
     padding: 0;
@@ -15,6 +16,15 @@ export const Styled = styled.div`
         width: 25%;
         padding: 10px;
         font-size: 18px;
+        button {
+          font-weight: bold;
+          padding: 7px 15px;
+          border-style: solid;
+          border-radius: 20px;
+          color: white;
+          border: 2px solid rgb(0, 175, 0);
+          background-color: rgb(68, 199, 103);
+        }
       }
     }
   }

@@ -13,7 +13,7 @@ export const getAllProducts = createAsyncThunk(
 
 export const deleteProduct = createAsyncThunk(
   'products/deleteProduct',
-  async (id: String) => {
+  async (id: string) => {
     const res = await instance.delete(`/products/${id}`);
   }
 );

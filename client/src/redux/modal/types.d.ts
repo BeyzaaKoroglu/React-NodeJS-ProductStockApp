@@ -1,9 +1,9 @@
 import { ProductType } from '../products/types';
 
 export type ModalStateType = {
-  showModal: Boolean;
+  showModal: boolean;
   modalType: ModalType;
   editProduct?: ProductType;
 };
 
-export type ModalType = 'addModal' | 'editModal' | '';
+export type ModalType = 'addModal' | 'editModal' | 'useModal' | '';

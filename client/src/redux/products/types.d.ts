@@ -1,11 +1,11 @@
 export type ProductsStateType = {
   allProducts: Array<ProductType>;
-  searchKey: String;
+  searchKey: string;
 };
 
 export type ProductType = {
-  _id: String;
-  name: String;
-  stock: Number;
-  createdAt: Date;
+  _id: string;
+  name: string;
+  stock: number;
+  createdAt: date;
 };

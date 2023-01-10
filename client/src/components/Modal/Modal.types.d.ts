@@ -1,4 +1,4 @@
 export type FormValuesType = {
-  name: String;
-  stock: Number;
+  name: string;
+  stock: number;
 };

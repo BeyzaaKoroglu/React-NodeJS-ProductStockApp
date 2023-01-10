@@ -8,7 +8,7 @@ const Header = () => {
 
   const handleClick = () => {
     dispatch(handleShowModal());
-    dispatch(handleModalType('addModal'));
+    dispatch(handleModalType('useModal'));
   };
   return (
     <Styled>
@@ -16,7 +16,7 @@ const Header = () => {
         Manage <b>Products</b>
       </p>
       <Search />
-      <button onClick={handleClick}>Add New Product</button>
+      <button onClick={handleClick}>Use Product</button>
     </Styled>
   );
 };
